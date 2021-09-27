@@ -1,0 +1,23 @@
+.moneyForm{
+    display:flex;
+    position: absolute;
+    flex-direction: column;
+    bottom:60px;
+    left: 100px;
+    width: 150px;
+    height: 350px;
+}
+.coin{
+    width: 60%;
+}
+.count{
+font-size: 20px;
+border-radius: 30px;
+width: 30px;
+height: 30px;
+left: 65px;
+position: absolute;
+text-align: center;
+color:white;
+background: #91D7EE
+}

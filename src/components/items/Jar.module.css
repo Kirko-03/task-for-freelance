@@ -1,0 +1,12 @@
+.mainJar{
+    position: absolute;
+    bottom: 90px;
+    height: 60%;
+  }
+  .jar{
+    position: relative;
+    margin: 30px;
+    height: 50%;
+    top: 100px;
+    left: 200px;
+  }
