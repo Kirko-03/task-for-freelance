@@ -1,14 +1,37 @@
+import centImg from "../../../assets/images/cent.png";
+import fiveCentImg from "../../../assets/images/5cent.png";
+import oneDimeImg from "../../../assets/images/10cent.png";
+import twentyFiveCentsImg from "../../../assets/images/25cent.png";
+import { useState } from "react";
 
-import cent from '../../../assets/images/cent.png'
-import fiveCent from '../../../assets/images/5cent.png'
-import oneDime from '../../../assets/images/10cent.png'
-import twentyFiveCents from '../../../assets/images/25cent.png'
-
-const style = require('./MoneyForm.module.css')
-export const MoneyForm = () =>{
-    let count = 0
-    const arrayCents = [twentyFiveCents,oneDime,fiveCent,cent]
-    return <div className={style.moneyForm}>
-    {arrayCents.map(cents=><div><div  className={style.count}>×{count}</div><img className={style.coin} src={cents}></img></div>)}
+const style = require("./MoneyForm.module.css");
+export const MoneyForm = ({clearBoolean}) => {
+  const [cent, setCent] = useState(0);
+  const [fiveCent, setFiveCent] = useState(0);
+  const [oneDime, setOneDime] = useState(0);
+  const [twentyFiveCents, setTwentyFiveCents] = useState(0);
+  const arrayCents = [
+    {setCoin: setTwentyFiveCents, coin: twentyFiveCents,src: twentyFiveCentsImg,},
+    { setCoin: setOneDime, coin: oneDime, src: oneDimeImg },
+    { setCoin: setFiveCent, coin: fiveCent, src: fiveCentImg },
+    { setCoin: setCent, coin: cent, src: centImg },
+  ];
+  return (
+    <div className={style.moneyForm}>
+      {arrayCents.map((cents) => (
+        <div>
+          <div className={style.divCount}>
+            <div className={style.count}>×{cents.coin}</div>
+          </div>
+          <img
+            onClick={() => {
+              cents.setCoin(cents.coin + 1);
+            }}
+            className={style.coin}
+            src={cents.src}
+          ></img>
+        </div>
+      ))}
     </div>
-}
+  );
+};

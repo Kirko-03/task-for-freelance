@@ -2,13 +2,19 @@
   position: relative;
   bottom: 100px;
   width: 80%;
-  height: 70%;
+  height: 75%;
 border:1px #369CB7 solid;
 }
 .mainJar{
   display:flex;
   justify-content: center;
   width: 40%;
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  
 }
 .jars{
   display:flex;

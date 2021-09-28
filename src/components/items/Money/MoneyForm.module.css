@@ -2,22 +2,50 @@
     display:flex;
     position: absolute;
     flex-direction: column;
+    
     bottom:60px;
-    left: 100px;
+    left: 50px;
     width: 150px;
     height: 350px;
 }
 .coin{
     width: 60%;
+    border-radius: 100px;
+}
+.divCount{
+    display: flex;
+    position: relative;
+    top: 55px;
+    left: 60px;
+    align-items: flex-start;
 }
 .count{
 font-size: 20px;
 border-radius: 30px;
 width: 30px;
 height: 30px;
-left: 65px;
+
 position: absolute;
 text-align: center;
 color:white;
 background: #91D7EE
 }
+
+
+/* export const MoneyForm = () => {
+
+ 
+    return (
+      <div className={style.moneyForm}>
+        <div>
+          <div className={style.divCount}>
+            <div className={style.count}>×0</div>
+          </div>
+          <Coin view={'twentyFiveCents'} />
+          <Coin view={'oneDime'} />
+          <Coin view={'fiveCent'} />
+          <Coin view={'cent'} />
+        </div>
+      </div>
+    );
+  }; */
