@@ -3,6 +3,11 @@
     bottom: 90px;
     height: 60%;
   }
+  .button{
+    position: relative;
+    top:80px;
+    left:200px
+  }
   .jar{
     position: relative;
     margin: 30px;

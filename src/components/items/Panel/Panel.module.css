@@ -1,3 +1,16 @@
+.panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:1px #369CB7 solid;
+    border-radius: 10px;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    left: 500px;
+    top:100px;
+}
 .moneyForm{
     display:flex;
     position: absolute;
@@ -30,6 +43,10 @@ text-align: center;
 color:white;
 background: #91D7EE
 }
+.button{
+    position: relative;
+    left: 180px;
+}
 .nullCount{
     font-size: 20px;
     border-radius: 30px;
@@ -41,14 +58,24 @@ background: #91D7EE
     color:white;
     background: #91D7EE
 }
-.count{
-    font-size: 20px;
-    border-radius: 30px;
-    width: 30px;
-    height: 30px;
-    
-    position: absolute;
-    text-align: center;
-    color:white;
-    background: #19b4e7
+.money{
+border:black 1px solid;
+width: 500px;
+height: 100px;
+margin:30px;
+}
+span{
+    text-align: end;
+}
+.exit{
+    font-weight: bold;
+    font-size: 30px;
+    color:#0ab3e2;
+    height: 10px;
+    position: relative;
+    bottom:30px;
+    left: 10px;
+    display:flex;
+    justify-content: end;
+    align-items: flex-start;
 }

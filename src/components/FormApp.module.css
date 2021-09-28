@@ -5,6 +5,12 @@
   height: 75%;
 border:1px #369CB7 solid;
 }
+.buttons{
+  position: relative;
+  left:5px;
+  top: 200px;
+
+}
 .mainJar{
   display:flex;
   justify-content: center;

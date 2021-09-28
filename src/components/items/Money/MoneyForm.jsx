@@ -2,16 +2,24 @@ import centImg from "../../../assets/images/cent.png";
 import fiveCentImg from "../../../assets/images/5cent.png";
 import oneDimeImg from "../../../assets/images/10cent.png";
 import twentyFiveCentsImg from "../../../assets/images/25cent.png";
-import { useState } from "react";
 
 const style = require("./MoneyForm.module.css");
-export const MoneyForm = ({clearBoolean}) => {
-  const [cent, setCent] = useState(0);
-  const [fiveCent, setFiveCent] = useState(0);
-  const [oneDime, setOneDime] = useState(0);
-  const [twentyFiveCents, setTwentyFiveCents] = useState(0);
-  const arrayCents = [
-    {setCoin: setTwentyFiveCents, coin: twentyFiveCents,src: twentyFiveCentsImg,},
+export const MoneyForm = ({
+  cent,
+  setCent,
+  fiveCent,
+  setFiveCent,
+  oneDime,
+  setOneDime,
+  twentyFiveCents,
+  setTwentyFiveCents,
+}) => {
+ const arrayCents = [
+    {
+      setCoin: setTwentyFiveCents,
+      coin: twentyFiveCents,
+      src: twentyFiveCentsImg,
+    },
     { setCoin: setOneDime, coin: oneDime, src: oneDimeImg },
     { setCoin: setFiveCent, coin: fiveCent, src: fiveCentImg },
     { setCoin: setCent, coin: cent, src: centImg },
@@ -21,7 +29,9 @@ export const MoneyForm = ({clearBoolean}) => {
       {arrayCents.map((cents) => (
         <div>
           <div className={style.divCount}>
-            <div className={style.count}>×{cents.coin}</div>
+            <div className={cents.coin > 0 ? style.count : style.nullCount}>
+              ×{cents.coin}
+            </div>
           </div>
           <img
             onClick={() => {
@@ -29,7 +39,7 @@ export const MoneyForm = ({clearBoolean}) => {
             }}
             className={style.coin}
             src={cents.src}
-          ></img>
+          />
         </div>
       ))}
     </div>
