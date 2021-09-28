@@ -1,8 +1,11 @@
 .App{
   height: 100vh;
-  
   display: flex;
   align-items:flex-end;
   justify-content: center;
+}
+.divSubmit{
+position: absolute;
+bottom:30px;
 }
 

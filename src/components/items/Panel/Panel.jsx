@@ -1,12 +1,14 @@
-import { useState } from "react";
+
 import { MyButton } from "../../utils/buttons/MyButton";
 const style = require("./Panel.module.css");
 
-export const Panel = ({arrayCoins,setPanel,finish}) => {
-    const [arrayCents,setArrayCents]=useState([])
-    if(finish){
-        setArrayCents([...arrayCoins])
-    }
+export const Panel = ({setArrayCents,arrayCents,setPanel,finish,setCountFinish,countFinish}) => {
+  if(!finish)
+  setArrayCents(arrayCents)
+  function panelFunc(){
+    setPanel(false)
+    setCountFinish(countFinish-1)
+  }
   return (
     <div className={style.panel}>
     <div >
@@ -30,7 +32,7 @@ export const Panel = ({arrayCoins,setPanel,finish}) => {
         </div>
       ))}
       </div>
-      <MyButton className={style.button} onClick={()=>setPanel(false)} view={'border'} text='Redo'/>
+      <MyButton className={style.button} onClick={panelFunc} view={'border'} text='Redo'/>
     </div>
     </div>
   );

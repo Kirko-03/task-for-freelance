@@ -3,13 +3,14 @@ import { MoneyForm } from "./items/Money/MoneyForm";
 import { MyButton } from "./utils/buttons/MyButton";
 import { useState } from "react";
 import { Panel } from "./items/Panel/Panel";
+import centImg from "./../assets/images/cent.png";
+import fiveCentImg from "./../assets/images/5cent.png";
+import oneDimeImg from "./../assets/images/10cent.png";
+import twentyFiveCentsImg from "./../assets/images/25cent.png";
 
 const style = require("./FormApp.module.css");
 
 export const FormApp = () => {
- 
-  const [arrayCoins, setArrayCoins] = useState();
-  console.log(arrayCoins)
   const [panel, setPanel] = useState(false);
   const [cent, setCent] = useState(0);
   const [fiveCent, setFiveCent] = useState(0);
@@ -20,6 +21,16 @@ export const FormApp = () => {
   let [finish, setFinish] = useState(false);
   let [clearBoolean, setClearBoolean] = useState(false);
   let [error, setError] = useState(false);
+  const [arrayCents,setArrayCents] = useState([
+    {
+      setCoin: setTwentyFiveCents,
+      coin: twentyFiveCents,
+      src: twentyFiveCentsImg,
+    },
+    { setCoin: setOneDime, coin: oneDime, src: oneDimeImg },
+    { setCoin: setFiveCent, coin: fiveCent, src: fiveCentImg },
+    { setCoin: setCent, coin: cent, src: centImg },
+  ])
   function finishFunc() {
     setFinish(true)
     setCountFinish(countFinish + 1);
@@ -43,7 +54,6 @@ export const FormApp = () => {
       <MoneyForm
         cent={cent}
         finish={finish}
-        setArrayCoins={setArrayCoins}
         setCent={setCent}
         fiveCent={fiveCent}
         setFiveCent={setFiveCent}
@@ -92,7 +102,7 @@ export const FormApp = () => {
             <Jar view={"jar"} />
           )}
         </div>
-      ):<Panel setFinish={setFinish} setPanel={setPanel} arrayCoins={arrayCoins} />}
+      ):<Panel setFinish={setFinish} setPanel={setPanel}countFinish={countFinish} setCountFinish={setCountFinish} arrayCents={arrayCents} setArrayCents={setArrayCents} />}
     </div>
   );
 };

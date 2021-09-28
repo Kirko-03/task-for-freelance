@@ -59,7 +59,8 @@ background: #91D7EE
     background: #91D7EE
 }
 .money{
-border:black 1px solid;
+    display:flex;
+    flex-direction: row;
 width: 500px;
 height: 100px;
 margin:30px;

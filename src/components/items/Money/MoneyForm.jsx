@@ -24,16 +24,18 @@ export const MoneyForm = ({
     { setCoin: setFiveCent, coin: fiveCent, src: fiveCentImg },
     { setCoin: setCent, coin: cent, src: centImg },
   ];
+  
   return (
     <div className={style.moneyForm}>
       {arrayCents.map((cents) => (
         <div>
           <div className={style.divCount}>
-            <div className={cents.coin > 0 ? style.count : style.nullCount}>
+            <div key={cents.coin} className={cents.coin > 0 ? style.count : style.nullCount}>
               ×{cents.coin}
             </div>
           </div>
-          <img
+          <img 
+          draggable={true}
             onClick={() => {
               cents.setCoin(cents.coin + 1);
             }}
