@@ -14,6 +14,7 @@ border:1px #369CB7 solid;
 .mainJar{
   display:flex;
   justify-content: center;
+  left:100px;
   width: 40%;
 }
 .buttons{

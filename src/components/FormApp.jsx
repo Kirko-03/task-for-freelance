@@ -52,6 +52,7 @@ export const FormApp = () => {
     <div className={style.formApp}>
       <h2> Make three different combinations to get $0.56</h2>
       <MoneyForm
+      result={result}
         cent={cent}
         finish={finish}
         setCent={setCent}
@@ -63,8 +64,8 @@ export const FormApp = () => {
         setTwentyFiveCents={setTwentyFiveCents}
       />
       <div className={style.mainJar}>
-        {error &&
-          ((result > 56 && <p>Перебор</p>) || (result < 56 && <p>Недобор</p>))}
+        {/* {error &&
+          ((result > 56 && <p>Перебор</p>) || (result < 56 && <p>Недобор</p>))} */}
         <Jar view={"mainJar"} />
         {result > 0 && (
           <div className={style.buttons}>
