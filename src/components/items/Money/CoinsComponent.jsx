@@ -5,6 +5,7 @@ export const CoinsComponent = React.memo(({id,oneArray,doubleFunc,dragOverHandle
       {oneArray.map((cents) => (
         <div >
           {doubleFunc( <img 
+          alt="coin"
             draggable={true}
             onDragStart={()=>cents.setCoin(cents.coin + 1)}
             onDragEnd={(e)=>dragOverHandler(e)}
@@ -21,6 +22,7 @@ export const CoinsComponent = React.memo(({id,oneArray,doubleFunc,dragOverHandle
       {twoArray.map((cents) => (
         <div >
           {doubleFunc( <img 
+          alt="coin"
             draggable={true}
             onDragStart={()=>cents.setCoin(cents.coin + 1)}
             onDragEnd={(e)=>dragOverHandler(e)}
@@ -37,6 +39,7 @@ export const CoinsComponent = React.memo(({id,oneArray,doubleFunc,dragOverHandle
       {threeArray.map((cents) => (
         <div >
           {doubleFunc( <img 
+          alt="coin"
             draggable={true}
             onDragStart={()=>cents.setCoin(cents.coin + 1)}
             onDragEnd={(e)=>dragOverHandler(e)}
@@ -53,6 +56,7 @@ export const CoinsComponent = React.memo(({id,oneArray,doubleFunc,dragOverHandle
       {fourArray.map((cents) => (
         <div >
           {doubleFunc( <img 
+          alt="coin"
             draggable={true}
             onDragStart={()=>cents.setCoin(cents.coin + 1)}
             onDragEnd={(e)=>dragOverHandler(e)}

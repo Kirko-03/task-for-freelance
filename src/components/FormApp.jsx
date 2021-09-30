@@ -1,17 +1,14 @@
-import React,{useMemo} from 'react'
+import React from 'react'
 import { Jar } from "./items/Jars/Jar";
 import { MoneyForm } from "./items/Money/MoneyForm";
 import { MyButton } from "./utils/buttons/Button/MyButton";
 import { useState } from "react";
 import { Panel } from "./items/Panel/Panel";
-import centImg from "../assets/images/cent.png";
-import fiveCentImg from "../assets/images/5cent.png";
-import oneDimeImg from "../assets/images/10cent.png";
-import twentyFiveCentsImg from "../assets/images/25cent.png";
 
 const style = require("./FormApp.module.css");
 
 export const FormApp = React.memo(() => {
+  const idArray = [0,1,2]
   const [countId,setCountId] = useState(1)
   const [panel, setPanel] = useState(false);
   const [cent, setCent] = useState(0);
@@ -23,26 +20,23 @@ export const FormApp = React.memo(() => {
   let [finish, setFinish] = useState(false);
   let [clearBoolean, setClearBoolean] = useState(false);
   let [error, setError] = useState(false);
-  const [arrayCents,setArrayCents] = useState([
-    {
-      setCoin: setTwentyFiveCents,
-      coin: twentyFiveCents,
-      src: twentyFiveCentsImg,
-    },
-    { setCoin: setOneDime, coin: oneDime, src: oneDimeImg },
-    { setCoin: setFiveCent, coin: fiveCent, src: fiveCentImg },
-    { setCoin: setCent, coin: cent, src: centImg },
-  ])
+  
+  
+
+
   function clearBank() {
-    setCent(0);
+    
+      setCent(0);
     setFiveCent(0);
     setOneDime(0);
     setTwentyFiveCents(0);
+
     setClearBoolean(false);
     setError(false);
     console.log(countId);
     setCountId(countId+1)
   }
+ 
   {
     clearBoolean && clearBank();
   }
@@ -51,12 +45,26 @@ export const FormApp = React.memo(() => {
   clearBank()
     document.getElementById(elementID).innerHTML = "";
 }
+  
 const  finishFunc=()=> {
   setFinish(true)
+  sessionStorage.setItem('x1',cent)
+  sessionStorage.setItem('x2',fiveCent)
+  sessionStorage.setItem('x3',oneDime)
+  sessionStorage.setItem('x4',twentyFiveCents)
+  sessionStorage.setItem('y1',cent)
+  sessionStorage.setItem('y2',fiveCent)
+  sessionStorage.setItem('y3',oneDime)
+  sessionStorage.setItem('y4',twentyFiveCents)
+  sessionStorage.setItem('z1',cent)
+  sessionStorage.setItem('z2',fiveCent)
+  sessionStorage.setItem('z3',oneDime)
+  sessionStorage.setItem('z4',twentyFiveCents) 
   setCountFinish(countFinish + 1);
   setCountId(countId+1)
   clearBox('money'+countId)
 }
+
   return (
     <div className={style.formApp}>
       <h2> Make three different combinations to get $0.56</h2>
@@ -76,7 +84,6 @@ const  finishFunc=()=> {
       <div className={style.mainJar}>
         {/* {error &&
           ((result > 56 && <p>Перебор</p>) || (result < 56 && <p>Недобор</p>))} */}
-         {/* {result==0&&<img className={style.phone} src={White}/>} */}
         <Jar view={"mainJar"} />
         
         {result > 0 && (
@@ -102,22 +109,29 @@ const  finishFunc=()=> {
          (
         <div className={style.jars}>
           {finish && countFinish >= 3 ? (
-            <Jar view={"moneyJar"} setPanel={setPanel} panel={panel} />
+            <Jar id={'3'} view={"moneyJar"} setPanel={setPanel} panel={panel} />
           ) : (
-            <Jar  view={"jar"} />
+            <Jar   view={"jar"} />
           )}
           {finish  && countFinish >= 2 ? (
-            <Jar view={"moneyJar"} setPanel={setPanel} panel={panel}  />
+            <Jar id={'2'} view={"moneyJar"} setPanel={setPanel} panel={panel}  />
           ) : (
-            <Jar view={"jar"} />
+            <Jar   view={"jar"} />
           )}
           {finish && countFinish >= 1 ? (
-            <Jar view={"moneyJar"}  setPanel={setPanel} panel={panel} />
+            <Jar id={'1'} view={"moneyJar"}  setPanel={setPanel} panel={panel} />
           ) : (
-            <Jar view={"jar"} />
+            <Jar   view={"jar"} />
           )}
         </div>
-      ):<Panel setFinish={setFinish} setPanel={setPanel}countFinish={countFinish} setCountFinish={setCountFinish} arrayCents={arrayCents} setArrayCents={setArrayCents} />}
+      ):<Panel  setPanel={setPanel}  twentyFiveCents={twentyFiveCents}
+      oneDime={oneDime}
+      fiveCent={fiveCent}
+      setCent={setCent}
+setFiveCent={setFiveCent}
+setOneDime={setOneDime}
+setTwentyFiveCents={setTwentyFiveCents}
+      cent={cent} countFinish={countFinish} finish={finish} setCountFinish={setCountFinish}  />}
     </div>
   );
 });

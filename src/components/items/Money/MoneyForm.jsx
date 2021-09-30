@@ -55,7 +55,7 @@ export const MoneyForm = React.memo(({
     e.target.style.left = (160+piece+piece*10)+'px'
     if(piece===8){
      setCount(count-5)
-     console.log(count);
+    
       setTop((Number(e.target.style.top.replace(e.target.style.top,190))-10+count)+'px')
       
       setPiece(0)
