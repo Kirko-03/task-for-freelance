@@ -1,8 +1,10 @@
-
-import { MyButton } from "../../utils/buttons/MyButton";
+import React from 'react'
+import { MyButton } from "../../utils/buttons/Button/MyButton";
 const style = require("./Panel.module.css");
 
-export const Panel = ({setArrayCents,arrayCents,setPanel,finish,setCountFinish,countFinish}) => {
+export const Panel = React.memo(({setArrayCents,arrayCents,setPanel,finish,setCountFinish,countFinish}) => {
+
+
   if(!finish)
   setArrayCents(arrayCents)
   function panelFunc(){
@@ -12,7 +14,7 @@ export const Panel = ({setArrayCents,arrayCents,setPanel,finish,setCountFinish,c
   return (
     <div className={style.panel}>
     <div >
-      <div className={style.exit} onClick={()=>setPanel(false)}   >×</div>
+      <div className={style.exit} onClick={()=>setPanel(false)}>×</div>
       <div className={style.money}>
       {arrayCents.map((cents) => (
         <div>
@@ -37,4 +39,4 @@ export const Panel = ({setArrayCents,arrayCents,setPanel,finish,setCountFinish,c
     </div>
     </div>
   );
-};
+});

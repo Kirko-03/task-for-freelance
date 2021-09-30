@@ -1,11 +1,11 @@
 import mainJar from '../../../assets/images/MainJar.png'  
 import jar from '../../../assets/images/Jar.png'  
 import moneyJar from  '../../../assets/images/moneyJar.png'  
-
-import { MyButton } from '../../utils/buttons/MyButton'
+import React from 'react'
+import { MyButton } from '../../utils/buttons/Button/MyButton'
  const style = require('./Jar.module.css')
 
-export const Jar = (props) =>{
+export const Jar = React.memo((props) =>{
 
  return <div>
    {props.view==='mainJar'&&<img alt={'mainJar'} className={style.mainJar} src={mainJar}/>}
@@ -13,4 +13,4 @@ export const Jar = (props) =>{
    {props.view==='moneyJar'&&<img alt={'moneyJar'} className={style.jar} src={moneyJar}/>}
    {props.view==='moneyJar'&&<MyButton className={style.button} onClick={()=>props.setPanel(true)} view={'underline'} text={'Double Click'}/>}
     </div>
-} 
+}) 

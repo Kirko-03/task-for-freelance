@@ -1,17 +1,17 @@
+import React,{useMemo} from 'react'
 import { Jar } from "./items/Jars/Jar";
 import { MoneyForm } from "./items/Money/MoneyForm";
-import { MyButton } from "./utils/buttons/MyButton";
+import { MyButton } from "./utils/buttons/Button/MyButton";
 import { useState } from "react";
 import { Panel } from "./items/Panel/Panel";
 import centImg from "../assets/images/cent.png";
 import fiveCentImg from "../assets/images/5cent.png";
 import oneDimeImg from "../assets/images/10cent.png";
 import twentyFiveCentsImg from "../assets/images/25cent.png";
-import White from "../assets/images/White.png"
 
 const style = require("./FormApp.module.css");
 
-export const FormApp = () => {
+export const FormApp = React.memo(() => {
   const [countId,setCountId] = useState(1)
   const [panel, setPanel] = useState(false);
   const [cent, setCent] = useState(0);
@@ -51,10 +51,9 @@ export const FormApp = () => {
   clearBank()
     document.getElementById(elementID).innerHTML = "";
 }
-function finishFunc() {
+const  finishFunc=()=> {
   setFinish(true)
   setCountFinish(countFinish + 1);
- 
   setCountId(countId+1)
   clearBox('money'+countId)
 }
@@ -121,4 +120,4 @@ function finishFunc() {
       ):<Panel setFinish={setFinish} setPanel={setPanel}countFinish={countFinish} setCountFinish={setCountFinish} arrayCents={arrayCents} setArrayCents={setArrayCents} />}
     </div>
   );
-};
+});

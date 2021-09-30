@@ -1,6 +1,6 @@
 import './App.css';
 import { FormApp } from './components/FormApp';
-import { MyButton } from './components/utils/buttons/MyButton';
+import { MyButton } from './components/utils/buttons/Button/MyButton';
 
 function App() {
   return (
