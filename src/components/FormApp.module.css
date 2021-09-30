@@ -11,6 +11,12 @@ border:1px #369CB7 solid;
   top: 200px;
 
 }
+.phone{
+  position: absolute;
+  width: 300px;
+  left: 150px;
+  bottom:50px
+}
 .mainJar{
   display:flex;
   justify-content: center;

@@ -3,14 +3,16 @@ import { MoneyForm } from "./items/Money/MoneyForm";
 import { MyButton } from "./utils/buttons/MyButton";
 import { useState } from "react";
 import { Panel } from "./items/Panel/Panel";
-import centImg from "./../assets/images/cent.png";
-import fiveCentImg from "./../assets/images/5cent.png";
-import oneDimeImg from "./../assets/images/10cent.png";
-import twentyFiveCentsImg from "./../assets/images/25cent.png";
+import centImg from "../assets/images/cent.png";
+import fiveCentImg from "../assets/images/5cent.png";
+import oneDimeImg from "../assets/images/10cent.png";
+import twentyFiveCentsImg from "../assets/images/25cent.png";
+import White from "../assets/images/White.png"
 
 const style = require("./FormApp.module.css");
 
 export const FormApp = () => {
+  const [countId,setCountId] = useState(1)
   const [panel, setPanel] = useState(false);
   const [cent, setCent] = useState(0);
   const [fiveCent, setFiveCent] = useState(0);
@@ -31,12 +33,6 @@ export const FormApp = () => {
     { setCoin: setFiveCent, coin: fiveCent, src: fiveCentImg },
     { setCoin: setCent, coin: cent, src: centImg },
   ])
-  function finishFunc() {
-    setFinish(true)
-    setCountFinish(countFinish + 1);
-    clearBank();
-    
-  }
   function clearBank() {
     setCent(0);
     setFiveCent(0);
@@ -44,14 +40,29 @@ export const FormApp = () => {
     setTwentyFiveCents(0);
     setClearBoolean(false);
     setError(false);
+    console.log(countId);
+    setCountId(countId+1)
   }
   {
     clearBoolean && clearBank();
   }
+  function clearBox(elementID)
+{ 
+  clearBank()
+    document.getElementById(elementID).innerHTML = "";
+}
+function finishFunc() {
+  setFinish(true)
+  setCountFinish(countFinish + 1);
+ 
+  setCountId(countId+1)
+  clearBox('money'+countId)
+}
   return (
     <div className={style.formApp}>
       <h2> Make three different combinations to get $0.56</h2>
       <MoneyForm
+      countId={countId}
       result={result}
         cent={cent}
         finish={finish}
@@ -66,13 +77,15 @@ export const FormApp = () => {
       <div className={style.mainJar}>
         {/* {error &&
           ((result > 56 && <p>Перебор</p>) || (result < 56 && <p>Недобор</p>))} */}
+         {/* {result==0&&<img className={style.phone} src={White}/>} */}
         <Jar view={"mainJar"} />
+        
         {result > 0 && (
           <div className={style.buttons}>
             <div className={style.buttons}>
               <MyButton
                 text={"Clear"}
-                onClick={() => setClearBoolean(true)}
+                onClick={() => clearBox('money'+(countId))}
                 view={"underline"}
               />
               <MyButton
@@ -82,8 +95,10 @@ export const FormApp = () => {
               />
             </div>
           </div>
+          
         )}
       </div>
+      
       {!panel ? 
          (
         <div className={style.jars}>

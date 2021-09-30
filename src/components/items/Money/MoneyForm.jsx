@@ -34,7 +34,7 @@ export const MoneyForm = ({
   const [count,setCount] = useState(0)
   const [piece,setPiece] = useState(0)
   const [top,setTop] = useState('190px') 
-   let [none,setNone]=useState(false)
+
    function doubleFunc(tag){
      let array = []
     for(let i=0;i<56;i++){
@@ -51,7 +51,7 @@ export const MoneyForm = ({
     e.target.style.margin='10px'
     e.target.style.top=top
     console.log(Number(e.target.style.top));
-    e.target.style.left = (155+piece+piece*10)+'px'
+    e.target.style.left = (160+piece+piece*10)+'px'
     if(piece===8){
      setCount(count-5)
      console.log(count);
@@ -61,9 +61,142 @@ export const MoneyForm = ({
     }
     }
   }
-
   return (
-    <div className={style.moneyForm}>
+  
+  <div  className={style.moneyForm}>
+    <div id={'money3'}>
+  {oneArray.map((cents) => (
+        <div >
+          {doubleFunc( <img 
+            draggable={true}
+            onDragStart={()=>cents.setCoin(cents.coin + 1)}
+            onDragEnd={(e)=>dragOverHandler(e)}
+             className={style.coin1}
+             src={cents.src}
+            />)}
+             <div className={style.divCount1}>
+            <div key={cents.coin} className={cents.coin > 0 ? style.count : style.nullCount}>
+              ×{cents.coin}
+            </div>
+          </div>
+        </div>
+      ))}
+      {twoArray.map((cents) => (
+        <div >
+          {doubleFunc( <img 
+            draggable={true}
+            onDragStart={()=>cents.setCoin(cents.coin + 1)}
+            onDragEnd={(e)=>dragOverHandler(e)}
+             className={style.coin2}
+             src={cents.src}
+            />)}
+              <div className={style.divCount2}>
+            <div key={cents.coin} className={cents.coin > 0 ? style.count : style.nullCount}>
+              ×{cents.coin}
+            </div>
+          </div>
+        </div>
+      ))}
+      {threeArray.map((cents) => (
+        <div >
+          {doubleFunc( <img 
+            draggable={true}
+            onDragStart={()=>cents.setCoin(cents.coin + 1)}
+            onDragEnd={(e)=>dragOverHandler(e)}
+             className={style.coin3}
+             src={cents.src}
+            />)}
+             <div className={style.divCount3}>
+            <div key={cents.coin} className={cents.coin > 0 ? style.count : style.nullCount}>
+              ×{cents.coin}
+            </div>
+          </div>
+        </div>
+      ))}
+      {fourArray.map((cents) => (
+        <div >
+          {doubleFunc( <img 
+            draggable={true}
+            onDragStart={()=>cents.setCoin(cents.coin + 1)}
+            onDragEnd={(e)=>dragOverHandler(e)}
+             className={style.coin4}
+             src={cents.src}
+            />)}
+              <div className={style.divCount4}>
+            <div key={cents.coin} className={cents.coin > 0 ? style.count : style.nullCount}>
+              ×{cents.coin}
+            </div>
+          </div>
+        </div>
+      ))}
+  </div>
+  <div id={'money2'}>
+  {oneArray.map((cents) => (
+        <div >
+          {doubleFunc( <img 
+            draggable={true}
+            onDragStart={()=>cents.setCoin(cents.coin + 1)}
+            onDragEnd={(e)=>dragOverHandler(e)}
+             className={style.coin1}
+             src={cents.src}
+            />)}
+             <div className={style.divCount1}>
+            <div key={cents.coin} className={cents.coin > 0 ? style.count : style.nullCount}>
+              ×{cents.coin}
+            </div>
+          </div>
+        </div>
+      ))}
+      {twoArray.map((cents) => (
+        <div >
+          {doubleFunc( <img 
+            draggable={true}
+            onDragStart={()=>cents.setCoin(cents.coin + 1)}
+            onDragEnd={(e)=>dragOverHandler(e)}
+             className={style.coin2}
+             src={cents.src}
+            />)}
+              <div className={style.divCount2}>
+            <div key={cents.coin} className={cents.coin > 0 ? style.count : style.nullCount}>
+              ×{cents.coin}
+            </div>
+          </div>
+        </div>
+      ))}
+      {threeArray.map((cents) => (
+        <div >
+          {doubleFunc( <img 
+            draggable={true}
+            onDragStart={()=>cents.setCoin(cents.coin + 1)}
+            onDragEnd={(e)=>dragOverHandler(e)}
+             className={style.coin3}
+             src={cents.src}
+            />)}
+             <div className={style.divCount3}>
+            <div key={cents.coin} className={cents.coin > 0 ? style.count : style.nullCount}>
+              ×{cents.coin}
+            </div>
+          </div>
+        </div>
+      ))}
+      {fourArray.map((cents) => (
+        <div >
+          {doubleFunc( <img 
+            draggable={true}
+            onDragStart={()=>cents.setCoin(cents.coin + 1)}
+            onDragEnd={(e)=>dragOverHandler(e)}
+             className={style.coin4}
+             src={cents.src}
+            />)}
+              <div className={style.divCount4}>
+            <div key={cents.coin} className={cents.coin > 0 ? style.count : style.nullCount}>
+              ×{cents.coin}
+            </div>
+          </div>
+        </div>
+      ))}
+  </div>
+    <div id={'money1'}>
       {oneArray.map((cents) => (
         <div >
           {doubleFunc( <img 
@@ -128,6 +261,6 @@ export const MoneyForm = ({
           </div>
         </div>
       ))}
-    </div>
+        </div></div>
   );
 };

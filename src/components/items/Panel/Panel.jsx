@@ -22,6 +22,7 @@ export const Panel = ({setArrayCents,arrayCents,setPanel,finish,setCountFinish,c
             </div>
           </div>
           <img
+          key={cents.src}
             onClick={() => {
               cents.setCoin(cents.coin + 1);
             }}

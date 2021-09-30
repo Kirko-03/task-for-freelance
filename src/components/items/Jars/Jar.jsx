@@ -1,6 +1,7 @@
 import mainJar from '../../../assets/images/MainJar.png'  
 import jar from '../../../assets/images/Jar.png'  
 import moneyJar from  '../../../assets/images/moneyJar.png'  
+
 import { MyButton } from '../../utils/buttons/MyButton'
  const style = require('./Jar.module.css')
 
