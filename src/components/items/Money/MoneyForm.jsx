@@ -38,7 +38,7 @@ export const MoneyForm = React.memo(({
 
    function doubleFunc(tag){
      let array = []
-    for(let i=0;i<56;i++){
+    for(let i=0;i<30;i++){
       array.push(tag) 
     }
   return array
@@ -65,7 +65,27 @@ export const MoneyForm = React.memo(({
   return (
   
   <div  className={style.moneyForm}>
-    <CoinsComponent id={'money10'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+      <CoinsComponent id={'money30'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money29'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money28'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money27'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money26'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money25'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money24'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money23'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money22'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money21'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+  <CoinsComponent id={'money20'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money19'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money18'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money17'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money16'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money15'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money14'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money13'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money12'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+   <CoinsComponent id={'money11'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
+  <CoinsComponent id={'money10'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
    <CoinsComponent id={'money9'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
    <CoinsComponent id={'money8'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />
    <CoinsComponent id={'money7'} oneArray={oneArray} doubleFunc={doubleFunc} threeArray={threeArray} twoArray={twoArray} fourArray={fourArray} dragOverHandler={dragOverHandler} />

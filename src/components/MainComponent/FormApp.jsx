@@ -1,14 +1,13 @@
 import React from 'react'
-import { Jar } from "./items/Jars/Jar";
-import { MoneyForm } from "./items/Money/MoneyForm";
-import { MyButton } from "./utils/buttons/Button/MyButton";
+import { Jar } from "../items/Jars/Jar";
+import { MoneyForm } from "../items/Money/MoneyForm";
+import { MyButton } from "../utils/buttons/Button/MyButton";
 import { useState } from "react";
-import { Panel } from "./items/Panel/Panel";
+import { Panel } from "../items/Panel/Panel";
 
 const style = require("./FormApp.module.css");
 
 export const FormApp = React.memo(() => {
-  const idArray = [0,1,2]
   const [countId,setCountId] = useState(1)
   const [panel, setPanel] = useState(false);
   const [cent, setCent] = useState(0);
@@ -19,20 +18,12 @@ export const FormApp = React.memo(() => {
   let [countFinish, setCountFinish] = useState(0);
   let [finish, setFinish] = useState(false);
   let [clearBoolean, setClearBoolean] = useState(false);
-  let [error, setError] = useState(false);
-  
-  
-
-
   function clearBank() {
-    
       setCent(0);
     setFiveCent(0);
     setOneDime(0);
     setTwentyFiveCents(0);
-
     setClearBoolean(false);
-    setError(false);
     console.log(countId);
     setCountId(countId+1)
   }
@@ -66,9 +57,12 @@ const  finishFunc=()=> {
 }
 
   return (
+    
     <div className={style.formApp}>
       <h2> Make three different combinations to get $0.56</h2>
+        <div> 
       <MoneyForm
+      clearBox={clearBox}
       countId={countId}
       result={result}
         cent={cent}
@@ -96,7 +90,7 @@ const  finishFunc=()=> {
               />
               <MyButton
                 text={"Done"}
-                onClick={result !== 56 ? () => setError(true) : finishFunc}
+                onClick={result !== 56 ? () => '' : finishFunc}
                 view={"border"}
               />
             </div>
@@ -109,22 +103,22 @@ const  finishFunc=()=> {
          (
         <div className={style.jars}>
           {finish && countFinish >= 3 ? (
-            <Jar id={'3'} view={"moneyJar"} setPanel={setPanel} panel={panel} />
+            <Jar result={result}   view={"moneyJar"} setPanel={setPanel} panel={panel} />
           ) : (
-            <Jar   view={"jar"} />
+            <Jar result={result}  view={"jar"} />
           )}
-          {finish  && countFinish >= 2 ? (
-            <Jar id={'2'} view={"moneyJar"} setPanel={setPanel} panel={panel}  />
+          {finish  && countFinish >= 2? (
+            <Jar result={result}  view={"moneyJar"} setPanel={setPanel} panel={panel}  />
           ) : (
-            <Jar   view={"jar"} />
+            <Jar result={result}  view={"jar"} />
           )}
           {finish && countFinish >= 1 ? (
-            <Jar id={'1'} view={"moneyJar"}  setPanel={setPanel} panel={panel} />
+            <Jar result={result}  view={"moneyJar"}  setPanel={setPanel} panel={panel} />
           ) : (
-            <Jar   view={"jar"} />
+            <Jar result={result}  view={"jar"} />
           )}
         </div>
-      ):<Panel  setPanel={setPanel}  twentyFiveCents={twentyFiveCents}
+      ):<Panel panel={panel} countId={countId} clearBox={clearBox}  setPanel={setPanel}  twentyFiveCents={twentyFiveCents}
       oneDime={oneDime}
       fiveCent={fiveCent}
       setCent={setCent}
@@ -132,6 +126,7 @@ setFiveCent={setFiveCent}
 setOneDime={setOneDime}
 setTwentyFiveCents={setTwentyFiveCents}
       cent={cent} countFinish={countFinish} finish={finish} setCountFinish={setCountFinish}  />}
+    </div>
     </div>
   );
 });

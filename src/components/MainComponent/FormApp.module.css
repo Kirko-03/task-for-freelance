@@ -9,7 +9,6 @@ border:1px #369CB7 solid;
   position: relative;
   left:5px;
   top: 200px;
-
 }
 .phone{
   position: absolute;
@@ -20,7 +19,6 @@ border:1px #369CB7 solid;
 .mainJar{
   display:flex;
   justify-content: center;
-  left:100px;
   width: 40%;
 }
 .buttons{
@@ -31,8 +29,8 @@ border:1px #369CB7 solid;
 }
 .jars{
   display:flex;
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 89%;
 flex-direction: row;
 justify-content: flex-end;
 }

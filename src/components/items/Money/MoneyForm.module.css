@@ -60,21 +60,11 @@
     left: 60px;
     align-items: flex-start;
 }
-.count{
-font-size: 20px;
-border-radius: 30px;
-width: 30px;
-height: 30px;
 
-position: absolute;
-text-align: center;
-color:white;
-background: #91D7EE
-}
 .nullCount{
     font-size: 20px;
     border-radius: 30px;
-    width: 30px;
+    width: 34px;
     height: 30px;
     
     position: absolute;
@@ -85,7 +75,7 @@ background: #91D7EE
 .count{
     font-size: 20px;
     border-radius: 30px;
-    width: 30px;
+    width: 34px;
     height: 30px;
     
     position: absolute;

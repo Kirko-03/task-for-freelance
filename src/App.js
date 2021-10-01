@@ -1,7 +1,8 @@
 import './App.css';
-import { FormApp } from './components/FormApp';
+import { FormApp } from './components/MainComponent/FormApp';
+import {SubmitPanel} from './components/MainComponent/SubmitPanel'
 import { MyButton } from './components/utils/buttons/Button/MyButton';
-
+import {useState} from 'react'
 function App() {
   return (
     <div className="App">

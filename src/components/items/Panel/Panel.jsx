@@ -9,6 +9,8 @@ const style = require("./Panel.module.css");
 
 export const Panel = React.memo(({setPanel,twentyFiveCents,
   oneDime,
+  countId,
+  clearBox,
   fiveCent,setCent,
   finish,
   setFiveCent,
@@ -16,7 +18,7 @@ export const Panel = React.memo(({setPanel,twentyFiveCents,
   setTwentyFiveCents,
   cent,setCountFinish,countFinish}) => {
     
-  const arrayCents = [
+  let arrayCents = [
     {
       setCoin: setTwentyFiveCents,
       coin: twentyFiveCents,
@@ -26,36 +28,51 @@ export const Panel = React.memo(({setPanel,twentyFiveCents,
     { setCoin: setFiveCent, coin: fiveCent, src: fiveCentImg },
     { setCoin: setCent, coin: cent, src: centImg },
   ]
+
+  let arrayCents1;
+  let arrayCents2;
+  let arrayCents3;
   function panelFunc(){
     setPanel(false)
+    clearBox('money'+countId)
     setCountFinish(countFinish-1)
- 
   }
-
+  function exitFunc(){
+    clearBox('money'+countId)
+    setPanel(false)
+  }
   if(countFinish===1&&finish){
-    setOneDime(  sessionStorage.getItem('x3'))
-    setFiveCent(  sessionStorage.getItem('x2'))
+    setOneDime(sessionStorage.getItem('x3'))
+    setFiveCent(sessionStorage.getItem('x2'))
     setCent(sessionStorage.getItem('x1'))
     setTwentyFiveCents(  sessionStorage.getItem('x4'))
   }
   else if(countFinish===2&&finish){
-    setOneDime(sessionStorage.getItem('y3'))
+
+      setOneDime(sessionStorage.getItem('y3'))
     setFiveCent(sessionStorage.getItem('y2'))
     setCent(sessionStorage.getItem('y1'))
-    setTwentyFiveCents(  sessionStorage.getItem('y4'))
+    setTwentyFiveCents(sessionStorage.getItem('y4'))
+
+   
   }
   else if(countFinish===3&&finish){
-    setOneDime(sessionStorage.getItem('z3'))
-    setFiveCent(sessionStorage.getItem('z2'))
-    setCent(sessionStorage.getItem('z1'))
-    setTwentyFiveCents(sessionStorage.getItem('z4'))
+     
+     setOneDime(sessionStorage.getItem('z3'))
+     setFiveCent(sessionStorage.getItem('z2'))
+     setCent(sessionStorage.getItem('z1'))
+     setTwentyFiveCents(sessionStorage.getItem('z4'))
+    
+   
   }
- 
+  console.log(arrayCents1);
+  console.log(arrayCents2);
+  console.log(arrayCents3);
   return (
     <div className={style.panel}>
     <div >
-      <div className={style.exit} onClick={()=>setPanel(false)}>×</div>
-      <div className={style.money}>
+      <div className={style.exit} onClick={()=>exitFunc()}>×</div>
+      <div className={style.money} >
       {arrayCents.map((cents) => (
         <div>
        

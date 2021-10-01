@@ -6,10 +6,10 @@
     border:1px #369CB7 solid;
     border-radius: 10px;
     width: 50%;
-    height: 50%;
+    height: 300px;
     position: relative;
-    left: 500px;
-    top:100px;
+    left: 550px;
+    top:50px;
 }
 .moneyForm{
     display:flex;
