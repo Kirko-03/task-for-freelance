@@ -16,21 +16,24 @@
 }
 .coin2{
     position: absolute;
-    width: 60%;
+    width: 45%;
     border-radius: 100px;
-     top:100px
+    left: 15px;
+     top:110px
 }
 .coin3{
     position: absolute;
-    width: 60%;
+    left: 5px;
+    width: 55%;
     border-radius: 100px;
     top:200px
 }
 .coin4{
     position: absolute;
-    width: 60%;
+    width: 50%;
     border-radius: 100px;
-    top:300px
+    top:310px;
+    left:10px
 }
 .divCount1{
     display: flex;

@@ -9,7 +9,7 @@
     height: 300px;
     position: relative;
     left: 550px;
-    top:50px;
+    top:-10px;
 }
 .moneyForm{
     display:flex;

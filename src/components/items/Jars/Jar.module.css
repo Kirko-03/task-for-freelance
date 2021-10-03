@@ -1,11 +1,7 @@
-.mainJar{
-    position: absolute;
-    bottom: 90px;
-    height: 60%;
-  }
+
   .button{
     position: relative;
-    top:100px;
+    top:70px;
     left:50px;
     /* font-size:30px */
   }
@@ -13,8 +9,14 @@
     position: relative;
     margin: 40px;
     height: 200px;
-    top: 130px;
+    top: 100px;
     left: 50px;
+  }
+  .jarSubmit{
+    position: relative;
+    height: 200px;
+    top: 40px;
+    left: 40px;
   }
 .ActiveMainJar{
   position: absolute;
@@ -24,7 +26,7 @@
 }
 .ActiveButton{
   position: relative;
-  top:40px;
+  top:10px;
   left:50px;
   /* font-size:30px */
 }
@@ -32,7 +34,7 @@
   position: relative;
     margin: 40px;
     height: 200px;
-    top: 70px;
+    top: 40px;
     left:50px
     
 }

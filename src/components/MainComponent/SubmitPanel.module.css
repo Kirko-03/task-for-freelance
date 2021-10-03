@@ -1,0 +1,48 @@
+.submitPanel {
+    display: flex;
+    justify-content: center;
+  position: relative;
+  bottom: -35px;
+  width: 71%;
+  left: 180px;
+  
+  height: 75%;
+  border: 1px #369cb7 solid;
+}
+.jars {
+  display: flex;
+  height: 350px;
+  width: 89%;
+ 
+  position: relative;
+
+  justify-content: center;
+  
+}
+.jar {
+   background: #8cbeca;
+    margin:26px;
+    width: 800px;
+    border-radius: 10px;
+    border:#369cb7 4px solid ;
+}
+.moneyJarFalse{
+    background: #FFE6E0;
+     margin:26px;
+     width: 800px;
+     border-radius: 10px;
+     border:#F7A491 4px solid ;
+ }
+ .moneyJarTrue{
+    background: 
+    #E8FFE0;
+     margin:26px;
+     width: 800px;
+     border-radius: 10px;
+     border:#9DD765 4px solid ;
+ }
+ .button{
+     position: absolute;
+     bottom:40px
+ }
+ 

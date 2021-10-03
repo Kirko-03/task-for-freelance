@@ -38,7 +38,7 @@ export const MoneyForm = React.memo(({
 
    function doubleFunc(tag){
      let array = []
-    for(let i=0;i<30;i++){
+    for(let i=0;i<50;i++){
       array.push(tag) 
     }
   return array
@@ -51,7 +51,6 @@ export const MoneyForm = React.memo(({
     e.target.style.position = 'absolute'
     e.target.style.margin='10px'
     e.target.style.top=top
-    console.log(Number(e.target.style.top));
     e.target.style.left = (160+piece+piece*10)+'px'
     if(piece===8){
      setCount(count-5)

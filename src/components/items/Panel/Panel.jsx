@@ -28,10 +28,6 @@ export const Panel = React.memo(({setPanel,twentyFiveCents,
     { setCoin: setFiveCent, coin: fiveCent, src: fiveCentImg },
     { setCoin: setCent, coin: cent, src: centImg },
   ]
-
-  let arrayCents1;
-  let arrayCents2;
-  let arrayCents3;
   function panelFunc(){
     setPanel(false)
     clearBox('money'+countId)
@@ -65,9 +61,7 @@ export const Panel = React.memo(({setPanel,twentyFiveCents,
     
    
   }
-  console.log(arrayCents1);
-  console.log(arrayCents2);
-  console.log(arrayCents3);
+
   return (
     <div className={style.panel}>
     <div >

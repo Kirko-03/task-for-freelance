@@ -4,11 +4,14 @@ import { MoneyForm } from "../items/Money/MoneyForm";
 import { MyButton } from "../utils/buttons/Button/MyButton";
 import { useState } from "react";
 import { Panel } from "../items/Panel/Panel";
+import {SubmitPanel} from './SubmitPanel'
 
 const style = require("./FormApp.module.css");
 
-export const FormApp = React.memo(() => {
-  const [countId,setCountId] = useState(1)
+export const FormApp = React.memo(({submit,countId,setCountId}) => {
+  const [oneJar,setOneJar] = useState(0)
+  const [twoJar,setTwoJar] = useState(0)
+  const [threeJar,setThreeJar] = useState(0)
   const [panel, setPanel] = useState(false);
   const [cent, setCent] = useState(0);
   const [fiveCent, setFiveCent] = useState(0);
@@ -24,7 +27,6 @@ export const FormApp = React.memo(() => {
     setOneDime(0);
     setTwentyFiveCents(0);
     setClearBoolean(false);
-    console.log(countId);
     setCountId(countId+1)
   }
  
@@ -39,6 +41,15 @@ export const FormApp = React.memo(() => {
   
 const  finishFunc=()=> {
   setFinish(true)
+ if(countFinish===0){
+  setOneJar(result)
+ }
+ if(countFinish===1){
+  setTwoJar(result)
+}
+if(countFinish===2){
+  setThreeJar(result)
+}
   sessionStorage.setItem('x1',cent)
   sessionStorage.setItem('x2',fiveCent)
   sessionStorage.setItem('x3',oneDime)
@@ -60,7 +71,7 @@ const  finishFunc=()=> {
     
     <div className={style.formApp}>
       <h2> Make three different combinations to get $0.56</h2>
-        <div> 
+      {submit?<SubmitPanel setCountFinish={setCountFinish} setCountId={setCountId} oneJar={oneJar} twoJar={twoJar} threeJar={threeJar} countFinish={countFinish} result={result} finish={finish}/>:<div> 
       <MoneyForm
       clearBox={clearBox}
       countId={countId}
@@ -90,7 +101,7 @@ const  finishFunc=()=> {
               />
               <MyButton
                 text={"Done"}
-                onClick={result !== 56 ? () => '' : finishFunc}
+                onClick={finishFunc}
                 view={"border"}
               />
             </div>
@@ -126,7 +137,7 @@ setFiveCent={setFiveCent}
 setOneDime={setOneDime}
 setTwentyFiveCents={setTwentyFiveCents}
       cent={cent} countFinish={countFinish} finish={finish} setCountFinish={setCountFinish}  />}
-    </div>
+    </div>}
     </div>
   );
 });
