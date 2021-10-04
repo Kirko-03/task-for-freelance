@@ -38,7 +38,7 @@ export const MoneyForm = React.memo(({
 
    function doubleFunc(tag){
      let array = []
-    for(let i=0;i<50;i++){
+    for(let i=0;i<25;i++){
       array.push(tag) 
     }
   return array
