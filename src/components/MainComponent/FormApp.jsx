@@ -8,7 +8,7 @@ import {SubmitPanel} from './SubmitPanel'
 
 const style = require("./FormApp.module.css");
 
-export const FormApp = React.memo(({submit,countId,setCountId}) => {
+export const FormApp = React.memo(({submit,countId,setCountId,submitFunc}) => {
   const [oneJar,setOneJar] = useState(0)
   const [twoJar,setTwoJar] = useState(0)
   const [threeJar,setThreeJar] = useState(0)
@@ -71,7 +71,7 @@ if(countFinish===2){
     
     <div className={style.formApp}>
       <h2> Make three different combinations to get $0.56</h2>
-      {submit?<SubmitPanel setCountFinish={setCountFinish} setCountId={setCountId} oneJar={oneJar} twoJar={twoJar} threeJar={threeJar} countFinish={countFinish} result={result} finish={finish}/>:<div> 
+      {submit?<SubmitPanel submitFunc={submitFunc} setCountFinish={setCountFinish} setCountId={setCountId} oneJar={oneJar} twoJar={twoJar} threeJar={threeJar} countFinish={countFinish} result={result} finish={finish}/>:<div> 
       <MoneyForm
       clearBox={clearBox}
       countId={countId}

@@ -45,4 +45,11 @@
      position: absolute;
      bottom:40px
  }
+ .exit{
+  font-weight: bold;
+  font-size: 30px;
+  color:#0ab3e2;
+  position: absolute;
+  left:775px
+ }
  

@@ -2,13 +2,14 @@ import {JarSubmit} from "../items/Jars/JarSubmit"
 import {MyButton} from "../utils/buttons/Button/MyButton"
 const style = require("./SubmitPanel.module.css");
 
-export const SubmitPanel = ({result,countFinish,finish,oneJar,twoJar,threeJar,setCountFinish}) =>{
+export const SubmitPanel = ({result,countFinish,finish,oneJar,twoJar,threeJar,setCountFinish,submitFunc}) =>{
   
     console.log(oneJar);
     console.log(twoJar);
     console.log(threeJar);
     return <div className={style.submitPanel}>
         <div className={style.jars}>
+            <div className={style.exit} onClick={()=>submitFunc()}>×</div>
           {finish && countFinish >= 3 ? (
              <div className={threeJar===56?style.moneyJarTrue:style.moneyJarFalse}>
                   <JarSubmit result={result}  view={"moneyJar"}   />

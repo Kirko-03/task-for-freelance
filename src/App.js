@@ -12,7 +12,7 @@ function App() {
   }
   return (
     <div className="App">
-    <FormApp submit={submit} countId={countId} setCountId={setCountId} />
+    <FormApp submit={submit} submitFunc={submitFunc} countId={countId} setCountId={setCountId} />
     <div className="divSubmit">
     <MyButton className="button" onClick={()=>submitFunc()} text={'Submit'} view={'submit'}/>
     </div> 
